@@ -9,7 +9,7 @@ const getSearchResultsData = () => {
 const getSearchResultsDataValue = (data, query) => {
   var formattedData = [];
   data.forEach(element => {
-    formattedData.push(element.urls.small);
+    formattedData.push(element.urls.regular);
   });
   return{
     type: GET_SEARCH_RESULT_SUCCESS,

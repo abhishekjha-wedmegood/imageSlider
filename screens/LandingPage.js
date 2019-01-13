@@ -2,7 +2,8 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Slider from "react-slick";
+// import Slider from "react-slick";
+import { Carousel } from 'react-responsive-carousel';
 
 import getSearchResultsFromAPI from "../actions/searchImage";
 
@@ -20,9 +21,11 @@ class LandingPage extends React.Component {
   }
 
   imageSlide = (url,key) => {
+    const newWidth = window.innerWidth > 767 ? (window.innerWidth-100) : (window.innerWidth-40);
+    const newHeight = window.innerHeight > 767 ? (window.innerHeight-100) : (window.innerHeight-40);
     return (
       <div>
-        <img src={url} id={key}/>
+        <img src={url} id={key} style={{width:`${newWidth}px`, height:`${newHeight}px`}}/>
       </div>
     );
   };
@@ -37,20 +40,19 @@ class LandingPage extends React.Component {
 
   render() {
     const settings = {
-      dots: true,
-      infinite: true,
-      autoplaySpeed: 700,
-      slidesToShow: 1,
-      adaptiveHeight: true,
-      autoplay: true,
-      centerMode: true,
-      adaptiveHeight: true,
-      variableWidth: true
+      autoPlay: true,
+      infiniteLoop: true,
+      showIndicators: true,
+      showArrows: true,
+      showThumbs: false,
+      width: `${window.innerWidth}px`,
+      axis: 'horizontal',
+      interval: 200
     };
     return (
-      <Slider {...settings}>
+      <Carousel {...settings}>
         {this.slideLoader()}
-      </Slider>
+      </Carousel>
     );
   }
 }
