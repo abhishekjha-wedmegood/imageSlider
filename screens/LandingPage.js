@@ -19,18 +19,18 @@ class LandingPage extends React.Component {
     this.props.getSearchResultsFromAPI("coffee", 1);
   }
 
-  imageSlide = url => {
+  imageSlide = (url,key) => {
     return (
       <div>
-        <img src={url} />
+        <img src={url} id={key}/>
       </div>
     );
   };
 
   slideLoader = () => {
     var slides = [];
-    this.props.urlList.forEach(element => {
-      slides.push(this.imageSlide(element));
+    this.props.urlList.forEach((element,key) => {
+      slides.push(this.imageSlide(element,key));
     })
     return slides;
   }
