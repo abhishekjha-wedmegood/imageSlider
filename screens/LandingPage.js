@@ -43,7 +43,9 @@ class LandingPage extends React.Component {
       slidesToShow: 1,
       adaptiveHeight: true,
       autoplay: true,
-      centerMode: true
+      centerMode: true,
+      adaptiveHeight: true,
+      variableWidth: true
     };
     return (
       <Slider {...settings}>

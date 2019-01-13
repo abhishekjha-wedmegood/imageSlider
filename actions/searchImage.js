@@ -1,4 +1,4 @@
-import { GET_SEARCH_RESULT, GET_SEARCH_RESULT_SUCCESS, GET_SEARCH_RESULT_ERROR, IMAGE_URL_PREFIX, IMAGE_URL_SUFFIX } from '../constants';
+import { GET_SEARCH_RESULT, GET_SEARCH_RESULT_SUCCESS, GET_SEARCH_RESULT_ERROR, IMAGE_URL_PREFIX, IMAGE_URL_SUFFIX, IMAGE_TYPE, DESKTOP_IMAGE_TYPE, MOBILE_IMAGE_TYPE } from '../constants';
 
 const getSearchResultsData = () => {
   return{
@@ -9,7 +9,7 @@ const getSearchResultsData = () => {
 const getSearchResultsDataValue = (data, query) => {
   var formattedData = [];
   data.forEach(element => {
-    formattedData.push(element.urls.regular);
+    formattedData.push(element.urls.small);
   });
   return{
     type: GET_SEARCH_RESULT_SUCCESS,
@@ -26,7 +26,14 @@ const getSearchResultsDataFailure = () => {
 
 
 const getSearchResultsFromAPI = (query, page=1) => {
-    const apiUrl = `${IMAGE_URL_PREFIX}${query}${IMAGE_URL_SUFFIX}${page}`;
+  var deviceType = '';
+  if(window.innerWidth > 767) {
+    deviceType = DESKTOP_IMAGE_TYPE;
+  }
+  else {
+    deviceType = MOBILE_IMAGE_TYPE;
+  }
+  const apiUrl = `${IMAGE_URL_PREFIX}${query}${IMAGE_TYPE}${deviceType}${IMAGE_URL_SUFFIX}${page}`;
   return(dispatch) => {
     dispatch(getSearchResultsData())
     fetch(apiUrl, { 
