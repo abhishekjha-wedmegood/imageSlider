@@ -1,0 +1,73 @@
+{
+  "name": "react-kit",
+  "version": "1.0.0",
+  "description": "Abhishek start kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js --mode development",
+    "prod": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js --mode production",
+    "build": "webpack --config ./webpack/webpack.dev.config.js --mode production "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a7-b7/react-kit.git"
+  },
+  "author": "Abhishek Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a7-b7/react-kit/issues"
+  },
+  "homepage": "https://github.com/a7-b7/react-kit#readme",
+  "dependencies": {
+    "@material-ui/core": "^1.5.0",
+    "autoprefixer": "^9.1.0",
+    "bootstrap": "^4.1.3",
+    "emotion": "^9.2.6",
+    "react": "^16.4.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.6",
+    "react-icons-kit": "^1.1.7",
+    "react-image-magnify": "^2.7.0",
+    "react-redux": "^5.0.7",
+    "react-responsive-carousel": "^3.1.41",
+    "react-router-dom": "^4.3.1",
+    "react-slick": "^0.23.1",
+    "react-youtube": "^7.6.0",
+    "reactstrap": "^6.4.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.82.2",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "url-loader": "^1.1.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
